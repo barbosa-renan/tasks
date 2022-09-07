@@ -3,7 +3,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Common.Behaviors;
 
-public class UnhandledExceptionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
+public class UnhandledExceptionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : MediatR.IRequest<TResponse>
 {
     private readonly ILogger<TRequest> _logger;
 

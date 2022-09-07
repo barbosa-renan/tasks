@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Application.TaskItems.Commands.DeleteTaskItem;
 
-public record DeleteTaskItemCommand(int Id) : IRequest;
+public record DeleteTaskItemCommand(Guid Id) : IRequest;
 
 public class DeleteTaskItemCommandHandler : IRequestHandler<DeleteTaskItemCommand>
 {

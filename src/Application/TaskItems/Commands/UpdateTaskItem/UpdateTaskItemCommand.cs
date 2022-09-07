@@ -7,7 +7,7 @@ namespace Application.TaskItems.Commands.UpdateTaskItem;
 
 public record UpdateTaskItemCommand : IRequest
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
 
     public string? Title { get; init; }
 

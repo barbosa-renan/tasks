@@ -1,7 +1,4 @@
-﻿using Domain.Common;
-using Domain.Enums;
-
-namespace Domain.Entities;
+﻿namespace Domain.Entities;
 
 public class TaskList : BaseEntity
 {
@@ -9,5 +6,5 @@ public class TaskList : BaseEntity
 
     public Status Status { get; set; } = Status.Todo;
 
-    public IList<TaskItem> Items { get; private set; } = new List<TaskItem>();
+    public List<TaskItem> Items { get; private set; } = new List<TaskItem>();
 }

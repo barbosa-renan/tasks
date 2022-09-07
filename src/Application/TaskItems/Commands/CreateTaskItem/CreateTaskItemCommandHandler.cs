@@ -7,7 +7,7 @@ namespace Application.TaskItems.Commands.CreateTaskItem;
 
 public record CreateTaskItemCommand : IRequest<Guid>
 {
-    public Guid ListId { get; init; }
+    public Guid TaskListId { get; init; }
 
     public string? Title { get; init; }
 }
@@ -25,7 +25,7 @@ public class CreateTaskItemCommandHandler : IRequestHandler<CreateTaskItemComman
     {
         var entity = new TaskItem
         {
-            ListId = request.ListId,
+            TaskListId = request.TaskListId,
             Title = request.Title,
             Done = false
         };
