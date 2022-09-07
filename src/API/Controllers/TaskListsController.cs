@@ -6,8 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
+[ApiController]
+[Route("api/v1/task-lists")]
 public class TaskListsController : ApiControllerBase
 {
+    /// <summary>
+    /// Lista todas as Tasks.
+    /// </summary>
+    /// <returns></returns>
     [HttpGet]
     public async Task<ActionResult<TasksViewModel>> Get()
     {

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
+[ApiController]
+[Route("api/v1/task-items")]
 public class TaskItemsController : ApiControllerBase
 {
     [HttpGet]
