@@ -10,6 +10,6 @@ public class CreateTaskListCommandValidator : AbstractValidator<CreateTaskListCo
     {
         RuleFor(v => v.Title)
             .NotEmpty().WithMessage("Title é obrigatório.")
-            .MaximumLength(256).WithMessage("Title pode ter até 256 caracteres.");
+            .MaximumLength(286).WithMessage("Title pode ter até 256 caracteres.");
     }
 }
