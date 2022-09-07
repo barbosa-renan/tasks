@@ -1,11 +1,13 @@
 ﻿using Application.Interfaces;
 using Domain.Entities;
 using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.TaskLists.Commands.CreateTaskList;
 
 public record CreateTaskListCommand : IRequest<Guid>
 {
+    [Required]
     public string? Title { get; init; }
 }
 

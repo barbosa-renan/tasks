@@ -20,7 +20,26 @@ public class TaskListsController : ApiControllerBase
         return await Mediator.Send(new GetTasksQuery());
     }
 
+    /// <summary>
+    /// Cria uma Task.
+    /// </summary>
+    /// <returns>Key da nova task criada.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     POST /api/v1/task-lists
+    ///     {
+    ///         "title": "string"
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="201">Retorna o id da task criada recentemente</response>
+    /// <response code="400">Se objeto da requisição não for válido</response>
+    /// <response code="500">Se propriedades do objeto não passarem na validação</response>
     [HttpPost]
+    [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<Guid>> Create(CreateTaskListCommand command)
     {
         return await Mediator.Send(command);
