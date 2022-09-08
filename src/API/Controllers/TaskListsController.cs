@@ -45,6 +45,10 @@ public class TaskListsController : ApiControllerBase
         return await Mediator.Send(command);
     }
 
+    /// <summary>
+    /// Atualiza as informações de uma Task List.
+    /// </summary>
+    /// <returns></returns>
     [HttpPut("{id}")]
     public async Task<ActionResult> Update(Guid id, UpdateTaskListCommand command)
     {
